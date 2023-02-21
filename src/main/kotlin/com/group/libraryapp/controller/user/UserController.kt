@@ -12,8 +12,7 @@ class UserController(
 ) {
 
   @PostMapping("/user")
-  fun saveUser(@RequestBody request: UserCreateRequest, @One one: Long) {
-    println(one) // 1이었으면 좋겠다. ArgumentResolver
+  fun saveUser(@RequestBody request: UserCreateRequest) {
     userService.saveUser(request)
   }
 
