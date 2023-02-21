@@ -27,6 +27,14 @@ class UserController(
     return ResponseEntity.ok("sorry");
   }
 
+  class SKTBaseException : RuntimeException()
+
+  enum class ExcetionCode(val message:String) {
+    A("Sorry"),
+    B("very Sorry"),
+    C("call CS center")
+  }
+
   @GetMapping("/user")
   fun getUsers(): List<UserResponse> {
     return userService.getUsers()
